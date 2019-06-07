@@ -1,0 +1,4 @@
+sched_setaffinity success...Pinned to Core 6
+Binding on port : 8055
+
+Started thread DumpToFile
