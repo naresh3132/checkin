@@ -1,0 +1,204 @@
+#include "ExComm.h"
+#include "nsefo_exch_structs.h"
+#include "md5.h"
+
+char chLogBuff[512] = {0};
+char chDataBuff[512] = {0};
+uint32_t iDataLen = 0;
+int16_t iRetVal = 0;
+
+
+
+int16_t ConnectToNSEFOExch(string strConnectionIP, uint32_t iConnectionPort, string strTMID, uint32_t iUserID, uint16_t sBranchId, uint32_t iExchVer, string strPassword, int32_t& iSockId, int16_t& iNoOfStreams)
+{
+    struct sockaddr_in server;
+    //Create socket
+    iSockId = socket(AF_INET , SOCK_STREAM , 0);
+    if(iSockId == -1)
+    {
+        //sprintf(chLogBuff, "[SYS] Could not create socket|Error %d|%s|", errno, strerror(errno));
+        //cout << chLogBuff << endl;
+        usleep(RECONNECTION_DELAY);
+        return -1;
+    }
+	
+    sprintf(chLogBuff,  "[SYS] Created Socket"); 
+    cout << chLogBuff << endl;
+	
+    int lnRecvBufSize = MAX_TCP_RECV_BUFF_SIZE;
+    if(0 != setsockopt(iSockId, SOL_SOCKET, SO_RCVBUF, &lnRecvBufSize, sizeof(lnRecvBufSize)))	
+    {
+        sprintf(chLogBuff, "[SYS] setsockopt failed for setting RecvBufSize"); 
+        cout << chLogBuff << endl;
+        usleep(RECONNECTION_DELAY);
+        return -1;
+    }	 
+    server.sin_family = AF_INET;
+  
+ 
+    sprintf(chLogBuff, "[SYS] Attempting Connection on | %s | %d |ConnectToExch", strConnectionIP.c_str(), iConnectionPort); 
+    cout << chLogBuff << endl;
+
+    server.sin_addr.s_addr = inet_addr(strConnectionIP.c_str());
+    server.sin_port = htons(iConnectionPort);
+	
+    //Connect to remote server
+    if (connect(iSockId , (struct sockaddr *)&server , sizeof(server)) < 0)
+    {
+        //sprintf(chLogBuff, "[SYS] connect() failed:[%d][%s]", errno, strerror(errno)); 
+        //cout << chLogBuff << endl;
+        usleep(RECONNECTION_DELAY);
+        return -1;
+    }
+   
+    int nReuseAddr = 1;
+    if(setsockopt(iSockId, SOL_SOCKET, SO_REUSEADDR, (char*)&nReuseAddr, sizeof(nReuseAddr)) < 0)
+    {
+      sprintf(chLogBuff, "[SYS] Error while setting REUSEADDR.");
+      cout << chLogBuff << endl;
+      close(iSockId);
+      usleep(RECONNECTION_DELAY);
+      return -1;
+    }
+	
+    fcntl(iSockId, F_SETFL, O_NONBLOCK);    //We are using Non Blocking Sockets
+    char flag = 0;
+    setsockopt(iSockId, IPPROTO_TCP, TCP_NODELAY, (char*)&flag, sizeof flag);
+	
+    sprintf(chLogBuff, "[SYS] Connected to Exch |%s:%d|SocketId %d|ConnectToExch", strConnectionIP.c_str(), iConnectionPort, iSockId);
+    cout << chLogBuff << endl;
+    
+    FrameLogonReq(strTMID, iUserID, sBranchId, iExchVer, strPassword, chDataBuff, iDataLen);
+    iRetVal = SendOrderToExchange(chDataBuff, iDataLen, iSockId);
+  
+    return iRetVal;
+}
+
+int16_t GetNSEFOBODDownload(uint32_t iUserID, uint16_t iStreamId, uint64_t llExchJiffy, char* pchBuffer, int32_t iSockId)
+{
+    NSEFO_MS_MESSAGE_DOWNLOAD_REQ oMsgDownloadReq;
+
+    memset(&oMsgDownloadReq.tap_hdr.sLength, ' ', sLen_NSEFO_MsgDownload_Req);	
+
+    oMsgDownloadReq.msg_hdr.TransactionCode = __bswap_16(NSEFO_DOWNLOAD_REQUEST);
+    oMsgDownloadReq.msg_hdr.LogTime         = 0;
+    //oMsgDownloadReq.msg_hdr.AlphaChar[0]	= '1';
+    oMsgDownloadReq.msg_hdr.AlphaChar[0]    = iStreamId;
+
+    //oMsgDownloadReq.msg_hdr.AlphaChar[1]	= 0;
+    oMsgDownloadReq.msg_hdr.TraderId        = __bswap_32(iUserID);
+    oMsgDownloadReq.msg_hdr.ErrorCode       = 0;
+    //	oMsgDownloadReq.msg_hdr.Timestamp   //Initialized to space
+    //	oMsgDownloadReq.msg_hdr.TimeStamp1	//Initialized to 0
+    //	oMsgDownloadReq.msg_hdr.TimeStamp2	//Initialized to space
+    oMsgDownloadReq.msg_hdr.MessageLength   = __bswap_16(sLen_NSEFO_MsgDownload_Req - sLen_NSEFO_Tap_Hdr);
+
+    memcpy(&oMsgDownloadReq.SeqNo, &llExchJiffy, 8);
+
+    oMsgDownloadReq.tap_hdr.sLength         = __bswap_16(sLen_NSEFO_MsgDownload_Req);
+    md5_ful27((char*)&oMsgDownloadReq.msg_hdr.TransactionCode, sLen_NSEFO_MsgDownload_Req-sLen_NSEFO_Tap_Hdr, oMsgDownloadReq.tap_hdr.CheckSum);
+
+
+    memcpy(pchBuffer, &oMsgDownloadReq.tap_hdr.sLength, sLen_NSEFO_MsgDownload_Req);
+    iDataLen = sLen_NSEFO_MsgDownload_Req;
+
+
+    iRetVal = SendOrderToExchange(pchBuffer, iDataLen, iSockId);
+
+    return iRetVal;    
+}
+
+int16_t ReceiveFromExchange(char* pchBuffer, uint32_t& iBytesRemaining, int32_t iSockId)
+{
+    uint32_t iBytesRcvd = 0;
+    iBytesRcvd = recv(iSockId , pchBuffer , RECV_BUFF_SIZE , 0);
+    iBytesRemaining += iBytesRcvd;
+    
+    sprintf(chLogBuff, "[SYS] ### Received Bytes[%d] pchCurrBuffPosn[%0X] errno [%d]", iBytesRemaining, pchBuffer, errno);
+    cout << chLogBuff << endl;
+  
+    if(iBytesRcvd != -1)
+    {
+        sprintf(chLogBuff, "[SYS] ### Received Bytes[%d] pchCurrBuffPosn[%0X] errno [%d]", iBytesRcvd, pchBuffer, errno);
+        cout << chLogBuff << endl;
+    }
+  
+    if( (iBytesRcvd < 0) && ((errno == EAGAIN) ||(errno == EWOULDBLOCK)) )
+    {
+        return(errno);
+    }
+    else if(iBytesRcvd > 0) 
+    { 
+        return(0);
+    }
+}
+
+int16_t SendOrderToExchange(char* pchBuffer, uint32_t iDataLength, int32_t iSockId)
+{
+    if( write(iSockId, pchBuffer, iDataLength) > 0)
+    {
+        return 0;
+    }
+    else
+    {
+      return errno;
+    }
+}
+
+int16_t DisconnectFromExchange(int32_t iSockId)
+{
+    shutdown(iSockId, SHUT_RDWR);
+    close(iSockId);
+    iSockId = 0;
+    return 0;
+}
+
+void FrameLogonReq(string strTMID, int32_t iUserId, int16_t sBranchId, int32_t iExchVer, string strPassword, char* pchBuffer, uint32_t& iDataLen)
+{
+    NSEFO_MS_SIGNON_REQ oExLognReq;
+    memset(&oExLognReq.tap_hdr.sLength, ' ', sizeof(NSEFO_MS_SIGNON_REQ));
+
+    oExLognReq.msg_hdr.TransactionCode	= __bswap_16(NSEFO_SIGN_ON_REQUEST_IN);
+    oExLognReq.msg_hdr.LogTime          = 0;
+    //oExLognReq.msg_hdr.AlphaChar      //Initialized to space
+    oExLognReq.msg_hdr.TraderId         = __bswap_32(iUserId);
+    oExLognReq.msg_hdr.ErrorCode        = 0;
+    //	oExLognReq.msg_hdr.Timestamp			//Initialized to space
+    //	oExLognReq.msg_hdr.TimeStamp1			//Initialized to 0
+    //	oExLognReq.msg_hdr.TimeStamp2			//Initialized to space
+    oExLognReq.msg_hdr.MessageLength		= __bswap_16(sizeof(NSEFO_MS_SIGNON_REQ) - sLen_NSEFO_Tap_Hdr);
+
+    oExLognReq.UserId                   = __bswap_32(iUserId);
+    memcpy(oExLognReq.Passwd, strPassword.c_str(), strPassword.length());
+
+    memcpy(oExLognReq.NewPassword, "        ", 8);
+
+    //oExLognReq.TraderName             //Initialized to spaces
+    oExLognReq.LastPasswdChangeDate     = 0;
+    memcpy(oExLognReq.BrokerId, strTMID.c_str(), strTMID.length());
+
+    //oExLognReq.Reserved1              //Initialized to space
+    oExLognReq.BranchId                 = __bswap_16(sBranchId);
+    oExLognReq.VersionNumber            = __bswap_32(iExchVer);
+    //oExLognReq.Reserved2
+    oExLognReq.UserType                 = 0;
+    oExLognReq.SequenceNumber           = 0;
+    //oExLognReq.WsClassName            //Initialized to spaces
+    //oExLognReq.BrokerStatus           //Initialized to spaces
+    oExLognReq.ShowIndex                = 'T';  //T: for Trimmed NNF Protocol
+    //oExLognReq.st_broker_eligibility_per_mkt. = 0;						//NNED TO COME BACK TO THIS
+    oExLognReq.UserType               = 0;		//1:Trading Member Only
+    //oExLognReq.ClearingStatus         //Initialized to spaces
+    //oExLognReq.BrokerName             //Initialized to spaces
+
+    oExLognReq.tap_hdr.sLength          = __bswap_16(sLen_NSEFO_Logon_Req);
+
+    //oExLognReq.tap_hdr.iSeqNo         = __bswap_32(++iSendSeqNo);
+
+    //oExLognReq.tap_hdr.sResrvSeqNo      = 0; 
+    //oExLognReq.tap_hdr.sMsgCnt          = __bswap_16(1); //HARDCODED, as specified in NNF doc
+    md5_ful27((char*)&oExLognReq.msg_hdr.TransactionCode, sLen_NSEFO_Logon_Req-sLen_NSEFO_Tap_Hdr, oExLognReq.tap_hdr.CheckSum);
+
+    memcpy(pchBuffer, &oExLognReq.tap_hdr.sLength, sLen_NSEFO_Logon_Req);
+    iDataLen = sLen_NSEFO_Logon_Req;
+}

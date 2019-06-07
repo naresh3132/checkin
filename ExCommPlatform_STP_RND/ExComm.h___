@@ -1,0 +1,38 @@
+/* 
+ * File:   ExComm.h
+ * Author: MuditSharma
+ *
+ * Created on March 7, 2017, 3:42 PM
+ */
+
+#ifndef EXCOMM_H
+#define	EXCOMM_H
+
+#include <stdint.h>
+#include <unistd.h>
+#include <string>
+#include <iostream>
+
+#include <arpa/inet.h>	//inet_addr
+#include <netinet/tcp.h>
+#include <sys/fcntl.h>
+//#include "common_structs.h"
+//#include "nsefo_exch_structs.h"
+
+using namespace std;
+
+
+//const uint32_t  RECONNECTION_DELAY      = 1000000;
+//const uint32_t  MAX_TCP_RECV_BUFF_SIZE  = 134217728; //128MB
+//const uint32_t  SEND_BUFF_SIZE          = 2048;
+//const int32_t   RECV_BUFF_SIZE          = 10485760; //10MB
+
+int16_t ConnectToNSEFOExch(string strConnectionIP, uint32_t iConnectionPort, string strTMID, uint32_t iUserID, uint16_t sBranchId, uint32_t iExchVer, string strPassword, int32_t& iSockId, int16_t& iNoOfStreams);
+int16_t GetNSEFOBODDownload(uint32_t iUserID, uint16_t iStreamId, uint64_t llExchJiffy, char* pchBuffer, int32_t iSockId);
+int16_t ReceiveFromExchange(char* pchBuffer, uint32_t& iBytesRemaining, int32_t iSockId);
+int16_t SendOrderToExchange(char* pchBuffer, uint32_t iDataLength, int32_t iSockId);
+int16_t DisconnectFromExchange(int32_t iSockId);
+void FrameLogonReq(string strTMID, int32_t iUserId, int16_t sBranchId, int32_t iExchVer, string strPassword, char* pchBuffer, uint32_t& iDataLen);
+
+#endif	/* EXCOMM_H */
+

@@ -1,0 +1,3 @@
+Instance,StratType,Token1,Token2,Token3,SingleOrderLot,MaxPositionLot,Spread,Reserved1,Reserved2,Reserved3,Reserved4,Reserved5,Reserved6,Reserved7,Reserved8,SymbolName,StrikePrice,Expiry
+1,1,45125,45914,45909,1,500,2,0,0,0,0,0,0,0,0,BANKNIFTY,2340000,NEXT_MONTH
+1,2,45125,45914,45909,1,500,2,0,0,0,0,0,0,0,0,BANKNIFTY,2340000,NEXT_MONTH

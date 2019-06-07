@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>ConfigReader.h</itemPath>
+      <itemPath>ExComm.h</itemPath>
+      <itemPath>../../NSEMatching_GR/SimMD5/MsgValidator.h</itemPath>
+      <itemPath>common_structs.h</itemPath>
+      <itemPath>md5.h</itemPath>
+      <itemPath>nsecm_constants.h</itemPath>
+      <itemPath>nsecm_exch_structs.h</itemPath>
+      <itemPath>nsefo_constants.h</itemPath>
+      <itemPath>nsefo_exch_structs.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>ConfigReader.cpp</itemPath>
+      <itemPath>ExComm.cpp</itemPath>
+      <itemPath>main.cpp</itemPath>
+      <itemPath>md5.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <architecture>2</architecture>
+          <standard>8</standard>
+          <commandLine>-Wall -ggdb</commandLine>
+          <warningLevel>2</warningLevel>
+        </ccTool>
+      </compileType>
+      <item path="../../NSEMatching_GR/SimMD5/MsgValidator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ConfigReader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ConfigReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ExComm.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ExComm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="common_structs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="md5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="md5.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="nsecm_constants.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="nsecm_exch_structs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="nsefo_constants.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="nsefo_exch_structs.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <architecture>2</architecture>
+          <standard>8</standard>
+          <warningLevel>2</warningLevel>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>SimMD5</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibLibItem>simmd5</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="../../NSEMatching_GR/SimMD5/MsgValidator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="ConfigReader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ConfigReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ExComm.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ExComm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="common_structs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="md5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="md5.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="nsecm_constants.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="nsecm_exch_structs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="nsefo_constants.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="nsefo_exch_structs.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -1,0 +1,3 @@
+Instance,StratType,Token1,Token2,Token3,Token4,SingleOrderLot,MaxPositionLot,Spread,Reserved1,Reserved2,Reserved3,Reserved4,Reserved5,Reserved6,Reserved7,Reserved8,PortName,Expiry
+1,9,36826,46244,46243,36827,1,500,0,0,0,2,0,0,0,0,0,NIFTY-26JUL18-9000-10000 (LC),CURRENT_MONTH
+1,10,36826,46244,46243,36827,1,500,0,0,0,2,0,0,0,0,0,NIFTY-26JUL18-9000-10000 (SC),CURRENT_MONTH

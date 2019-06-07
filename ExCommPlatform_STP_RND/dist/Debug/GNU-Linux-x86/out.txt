@@ -1,0 +1,1000 @@
+   25  gdb MatchingEngineFO core.29499 
+   26  rm core.2*
+   27  ./stop.sh 
+   28  ./start.sh 
+   29  rm core.745 
+   30  ./start.sh 
+   31  less .matchingengineFO_20180604.log 
+   32  top
+   33  free -g
+   34  top
+   35  free -g
+   36  scp MatchingEngineFO root@10.250.34.216:/else/FO/
+   37  ./start.sh 
+   38  top
+   39  less .matchingengineFO_20180604.log 
+   40  free -g
+   41  ./stop.sh 
+   42  free -g
+   43  vim config.ini 
+   44  ./start.sh 
+   45  free -g
+   46  less Token.txt 
+   47  free -g
+   48  ./stop.sh 
+   49  vim config.ini 
+   50  ./start.sh 
+   51  free -g
+   52  less Token.txt |wc -l
+   53  free -g
+   54  ./start.sh 
+   55  less Token.txt |wc -l
+   56  free -g
+   57  ./stop.sh 
+   58  ./start.sh 
+   59  less .matchingengineFO_20180604.log 
+   60  free -g
+   61  less simulator_04Jun_1642.log 
+   62  free -g
+   63  less simulator_04Jun_1642.log 
+   64  less PFSConfig.ini 
+   65  less confi
+   66  less config.ini 
+   67  free -g
+   68  top
+   69  vim config.ini 
+   70  ./start.sh 
+   71  ./stop.sh 
+   72  ./start.sh 
+   73  less .matchingengineFO_20180604.log 
+   74  free -g
+   75  less Token.txt 
+   76  less simulator_04Jun_1645.log 
+   77  ./stop.sh 
+   78  vim config.ini 
+   79  ./start.sh 
+   80  less .matchingengineFO_20180604.log 
+   81  free -g
+   82  ls -lrt
+   83  rm core.3397 
+   84  ./MatchingEngineFO
+   85  ./stop.sh 
+   86  vim PFSConfig.ini 
+   87  vim config.ini 
+   88  ./start.sh 
+   89  less simulator_04Jun_1652.log 
+   90  ./stop.sh 
+   91  ./MatchingEngineFO
+   92  free -g
+   93  ls -lrt
+   94  ./start.sh 
+   95  ./stop.sh 
+   96  vim config.ini 
+   97  ./start.sh 
+   98  less .matchingengineFO_20180604.log 
+   99  less cofn
+  100  less config.ini 
+  101  vim config.ini 
+  102  free -g
+  103  less .matchingengineFO_20180604.log 
+  104  ./stop.sh 
+  105  mv Token.txt Token_PFS.txt
+  106  cp Token_test.txt Token.txt
+  107  ./start.sh 
+  108  less .matchingengineFO_20180604.log 
+  109  free -g
+  110  less .matchingengineFO_20180604.log 
+  111  free -g
+  112  scp MatchingEngineFO root@10.250.34.216:/else/FO/
+  113  ./stop.sh 
+  114  top
+  115  ls -lrt
+  116  ssh root@10.250.34.215
+  117  cd SUB2_BINARY_PHASE3_220_17May2018/
+  118  less CONFIG/sub2p3_config.ini
+  119  cd ..
+  120  scp -r SUB2_BINARY_PHASE3_INST2_29May root@10.250.34.220:/else/SUB2_BINARY_PHASE3
+  121  vim /else/user_home/naresh/.ssh/known_hosts
+  122  scp -r SUB2_BINARY_PHASE3_INST2_29May root@10.250.34.220:/else/SUB2_BINARY_PHASE3
+  123  ssh root@10.250.34.220
+  124  cd SUB2_BINARY_PHASE3_220_17May2018/
+  125  less CONFIG/sub2p3_config.ini
+  126  grep isol /boot/grub/grub.cfg
+  127  cd
+  128  cd FES_BOX/
+  129  ls -lrt
+  130  cd ..
+  131  ls -lrt
+  132  cd SUB2_BINARY_PHASE3_220_17May2018
+  133  less CONFIG/sub2p3_config.ini
+  134  ssh root@10.250.34.220
+  135  cd sub2p3_EoD_Analytics
+  136  ls -lrt
+  137  cd dist/Debug/GNU-Linux-x86/
+  138  ls -lrt
+  139  pwd
+  140  less sub2p3_eod_analytics.ini 
+  141  ./sub2p3_eod_analytics sub2_logger_20180607_1.log 
+  142  vim sub2_logger_20180607_1.log 
+  143  vim sub2p3_eod_analytics.ini 
+  144  ./sub2p3_eod_analytics sub2_logger_20180607_1.log 
+  145  vim sub2_logger_20180607_1.log 
+  146  vim sub2p3_eod_analytics.ini 
+  147  ./sub2p3_eod_analytics sub2_logger_20180607_1.log 
+  148  ssh root@10.250.34.216
+  149  cd FES/
+  150  ls -lrt
+  151  cd SUB2_P3_FESERVICE/
+  152  less INSTANCE_1_TokenList.txt
+  153  cp INSTANCE_1_TokenList.txt INSTANCE_1_TokenList.txt_4june
+  154  vim INSTANCE_1_TokenList.txt
+  155  cd ..
+  156  ./start_FES.sh 
+  157  less SUB2_P3_FESERVICE/out.txt 
+  158  ./stop_FES.sh 
+  159  cd SUB2_P3_FESERVICE/
+  160  vim INSTANCE_1_TokenList.txt
+  161  cd ..
+  162  ./start_FES.sh 
+  163  ./stop_FES.sh 
+  164  cd SUB2_P3_FESERVICE/
+  165  cp INSTANCE_1_TokenList.txt INSTANCE_1_TokenList.txt_1
+  166  cp INSTANCE_1_TokenList.txt_4june INSTANCE_1_TokenList.txt
+  167  cd ..
+  168  ./start_FES.sh 
+  169  ./stop_FES.sh 
+  170  cd SUB2_P3_FESERVICE/
+  171  ls -lrt
+  172  vim INSTANCE_1_TokenLimit1.txt 
+  173  vim INSTANCE_1_TokenList.txt
+  174  less INSTANCE_1_TokenLimit1.txt 
+  175  cat INSTANCE_1_TokenLimit1.txt >> INSTANCE_1_TokenList.txt
+  176  cd ..
+  177  ./start_FES.sh 
+  178  ./stop_FES.sh 
+  179  vim SUB2_P3_FESERVICE/
+  180  cd SUB2_P3_FESERVICE/
+  181  vim INSTANCE_1_TokenList.txt
+  182  cd ..
+  183  ./start_FES.sh 
+  184  ./stop_FES.sh 
+  185  cd SUB2_P3_FESERVICE/
+  186  ls -lrt
+  187  rm core.30*
+  188  vim INSTANCE_1_TokenLimit1.txt 
+  189  cat INSTANCE_1_TokenLimit1.txt >> INSTANCE_1_TokenList.txt
+  190  cd ..
+  191  ./start_FES.sh 
+  192  cd SUB2_P3_FESERVICE/
+  193  vim INSTANCE_1_TokenList.txt
+  194  cd ..
+  195  ./stop_FES.sh 
+  196  ./start_FES.sh 
+  197  less SUB2_P3_FESERVICE/out.txt 
+  198  cd SUB2_P3_FESERVICE/
+  199  vim INSTANCE_1_TokenList.txt
+  200  less SUB2_P3_FESERVICE/out.txt 
+  201  less out.txt 
+  202  vim INSTANCE_1_TokenList.txt
+  203  cat INSTANCE_1_TokenLimit.txt >>INSTANCE_1_TokenList.txt
+  204  vim INSTANCE_1_TokenList.txt
+  205  cd ..
+  206  ./stop_FES.sh 
+  207  ./start_FES.sh 
+  208  less SUB2_P3_FESERVICE/dealer_segment.conf 
+  209  less SUB2_P3_FESERVICE/error_code_to_string.conf 
+  210  ./stop_FES.sh 
+  211  less start_FES.sh 
+  212  ./start_FES.sh 
+  213  ./stop_FES.sh 
+  214  ./start_FES.sh 
+  215  ./stop_FES.sh 
+  216  ./start_FES.sh 
+  217  ./stop_FES.sh 
+  218  ./start_FES.sh 
+  219  ./stop_FES.sh 
+  220  cd SUB2_P3_FESERVICE/
+  221  less INSTANCE_1_TokenList.txt
+  222  less dealer_segment.conf 
+  223  cd ..
+  224  ./start_FES.sh 
+  225  less SUB2_P3_FESERVICE/
+  226  cd SUB2_P3_FESERVICE/
+  227  less out.txt 
+  228  less INSTANCE_1_TokenList.txt
+  229  vim INSTANCE_1_TokenList.txt
+  230  cd ..
+  231  ./start_FES.sh 
+  232  ./stop_FES.sh 
+  233  ./start_FES.sh 
+  234  cd Project/ExCommPlatform
+  235  cd dist/Debug/GNU-Linux-x86/
+  236  ls -lrt
+  237  rm INSTANCE_1_TokenPortFolio1*
+  238  cp INSTANCE_1_TokenPortFolio.csv INSTANCE_1_TokenPortFolio.csv_bank 
+  239  ls -lrt
+  240  ./excommplatform 10 INSTANCE_1_TokenPortFolio.csv
+  241  less INSTANCE_1_TokenPortFolio.csv
+  242  ./excommplatform 10 INSTANCE_1_TokenPortFolio.csv
+  243  ./excommplatform 1 INSTANCE_1_TokenPortFolio.csv
+  244  ls -lrt
+  245  gdb excommplatform core.374 
+  246  ls -lrt
+  247  ./excommplatform 10 INSTANCE_1_TokenPortFolio.csv
+  248  free -g
+  249  top
+  250  free -g
+  251  top
+  252  ls -lrt
+  253  ./excommplatform 10 INSTANCE_1_TokenPortFolio.csv
+  254  ./excommplatform 1 INSTANCE_1_TokenPortFolio.csv
+  255  ssh root@10.250.34.215
+  256  ssh root@10.250.34.217
+  257  ssh root@10.250.34.21
+  258  ssh root@10.250.34.220
+  259  ssh root@10.250.34.223
+  260  ssh root@10.250.34.220
+  261  ssh root@10.250.34.219
+  262  ssh root@10.250.34.216
+  263  ls -lrt
+  264  cd 210/BackupFolder/
+  265  cd Sub3_Latency_Backup/
+  266  ls -lrt
+  267  cd sub2p3_EoD_Analytics_InProd_23oct_Conrev
+  268  cd dist/Release/GNU-Linux-x86/
+  269  ls -lrt
+  270  ./sub2p3_eod_analytics_inprod_23oct_conrev /else/user_home/naresh/sub2p3_EoD_Analytics/dist/Debug/GNU-Linux-x86/4sub2_logger_20180607_1.log 
+  271  cd ../../../
+  272  cd ..
+  273  ls -lrt
+  274  cd sub2p3_EoD_Analytics_Triangle_TradeFieldAddition/dist/Release/GNU-Linux-x86/
+  275  ls -lrt
+  276  ./sub2p3_eod_analytics /else/user_home/naresh/sub2p3_EoD_Analytics/dist/Debug/GNU-Linux-x86/4sub2_logger_20180607_1.log
+  277  ls -lrt
+  278  gdb sub2p3_eod_analytics core.21330
+  279  ls -lrt
+  280  rm core.213*
+  281  ls -lrt
+  282  cd ..
+  283  ls -lrt
+  284  cd sub2p3_EoD_Analytics_Triangle_TradeFieldAddition
+  285  diff gw_logger_struct.h /else/user_home/naresh/gw_logger_struct.h_CRX 
+  286  cd ..
+  287  ls -lrt
+  288  cd sub2p3_EoD_Analytics_Triangle
+  289  cd dist/Release/GNU-Linux-x86/
+  290  ls -lrt
+  291  ./sub2p3_eod_analytics /else/user_home/naresh/sub2p3_EoD_Analytics/dist/Debug/GNU-Linux-x86/4sub2_logger_20180607_1.log
+  292  rm core.21739 
+  293  cd ..
+  294  ls -lrt
+  295  cp -r sub2p3_EoD_Analytics_Triangle_TradeFieldAddition sub2p3_EoD_Analytics_Triangle_TradeFieldAddition_CRX
+  296  cd sub2p3_EoD_Analytics_Triangle_TradeFieldAddition_CRX/
+  297  less gw_logger_struct.h 
+  298  ssh root@10.250.34.215
+  299  pwd
+  300  ls -lrt
+  301  cd ../../../
+  302  cd  BackupFolder/Sub3_Latency_Backup/
+  303  ls -lr
+  304  cp sub2p3_EoD_Analytics_Triangle_TradeFieldAddition sub2p3_EoD_Analytics_Triangle_TradeFieldAddition_Box
+  305  cp -r  sub2p3_EoD_Analytics_Triangle_TradeFieldAddition sub2p3_EoD_Analytics_Triangle_TradeFieldAddition_Box
+  306  cd sub2p3_EoD_Analytics_Box/
+  307  cd dist/Debug/GNU-Linux-x86/
+  308  ls -lrt
+  309  cp ../../Release/GNU-Linux-x86/sub2p3_eod_analytics.ini .
+  310  mv sub2p3_eod_analytics.ini Box_sub2p3_eod_analytics.ini
+  311  ls -lrt
+  312  cd ..
+  313  less gw_logger_struct.h 
+  314  cd dist/Debug/GNU-Linux-x86/
+  315  ls -lrt
+  316  pwd
+  317  ls -lrt
+  318  ./sub2p3_eod_analytics_box sub2_logger_20180614_1.log 
+  319  ls -lrt
+  320  rm core.7511 
+  321  cd ..cd
+  322  cd ..
+  323  ls -lrt
+  324  cd sub2p3_EoD_Analytics_TriTime_23012018
+  325  cd dist/Debug/GNU-Linux-x86/
+  326  ls -lrt
+  327  pwd
+  328  ls -lrt
+  329  cd ../../Release/GNU-Linux-x86/
+  330  ./sub2p3_eod_analytics ../../Debug/GNU-Linux-x86/sub2_logger_20180614_1.log 
+  331  ls -lrt
+  332  ./sub2p3_eod_analytics_tritime_23012018  ../../Debug/GNU-Linux-x86/sub2_logger_20180614_1.log 
+  333  vim sub2p3_eod_analytics.ini 
+  334  pwd
+  335  cd ..
+  336  ls -lrt
+  337  cd sub2p3_EoD_Analytics_TRI_RTT_09Feb2108/dist/Release/GNU-Linux-x86/
+  338  ./sub2p3_eod_analytics_tri_rtt_09feb2108 ../../../../sub2p3_EoD_Analytics_TriTime_23012018/dist/Debug/GNU-Linux-x86/sub2_logger_20180614_1.log 
+  339  less sub2p3_eod_analytics.ini 
+  340  vim sub2p3_eod_analytics.ini 
+  341  p[wd
+  342  wd
+  343  pwd
+  344  ./sub2p3_eod_analytics_tri_rtt_09feb2108 ../../../../sub2p3_EoD_Analytics_TriTime_23012018/dist/Debug/GNU-Linux-x86/sub2_logger_20180614_1.log 
+  345  pwd
+  346  cd /else/user_home/naresh/210/BackupFolder/Sub3_Latency_Backup/sub2p3_EoD_Analytics_Box_14Jun2018/dist/Debug/GNU-Linux-x86
+  347  less TRT
+  348  less fi 
+  349  ls -lrt
+  350  cd 210/BackupFolder/Sub3_Latency_Backup/sub2p3_EoD_Analytics_Triangle_TradeFieldAddition_CRX/dist/Debug/GNU-Linux-x86/
+  351  ls -lrt
+  352  scp  sub2p3_eod_analytics_triangle_tradefieldaddition_crx root@10.250.34.216:/else/SUB2_BINARY_PHASE3/SUB2_BINARY_LOGGER/BinReader/
+  353  cd
+  354  cd Project/ExCommPlatform/dist/Debug/GNU-Linux-x86/
+  355  ls -lrt
+  356  rm core.*
+  357  less INSTANCE_1_TokenPortFolio.csv
+  358  less config_ExCommPlatform.ini 
+  359  ssh root@10.250.34.215
+  360  ls -lrt
+  361  cd 20180505_34.220_SUB2_BINARY_PHASE3
+  362  clear
+  363  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  364  md5sum INSTANCE1/STRATEGY/platformwithirms
+  365  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  366  md5sum SUB2_BINARY_LOGGER/memstore
+  367  md5sum STUB/stub
+  368  cd ..
+  369  ls -lrt
+  370  cd 
+  371  cd SUB2_BINARY_PHASE3_INST2_29May
+  372  ckear
+  373  clear\
+  374  clear
+  375  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  376  md5sum INSTANCE1/STRATEGY/platformwithirms
+  377  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  378  md5sum SUB2_BINARY_LOGGER/memstore
+  379  md5sum STUB/stub
+  380  cd ..
+  381  ls -lrt
+  382  cd 20180505_34.220_SUB2_BINARY_PHASE3
+  383  ls -lrt
+  384  cd ../SUB2_BINARY_PHASE3_INST2_29May
+  385  clear
+  386  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  387  md5sum INSTANCE1/STRATEGY/platformwithirms
+  388  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  389  md5sum SUB2_BINARY_LOGGER/memstore
+  390  md5sum STUB/stub
+  391  cd ..
+  392  ls -lrt
+  393  cd 4Apr2018_SUB2_BINARY_PHASE3
+  394  clear
+  395  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  396  md5sum INSTANCE1/STRATEGY/platformwithirms
+  397  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  398  md5sum SUB2_BINARY_LOGGER/memstore
+  399  md5sum STUB/stub
+  400  clear
+  401  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  402  md5sum INSTANCE1/STRATEGY/platformwithirms
+  403  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  404  md5sum SUB2_BINARY_LOGGER/memstore
+  405  md5sum STUB/stub
+  406  cd ..
+  407  ls -lrt
+  408  cd 7May2108_GR_SUB2_BINARY_PHASE3
+  409  clear
+  410  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  411  md5sum INSTANCE1/STRATEGY/platformwithirms
+  412  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  413  md5sum SUB2_BINARY_LOGGER/memstore
+  414  md5sum STUB/stub
+  415  cd ..
+  416  ls -lrt
+  417  cd SUB2_BINARY_PHASE3_8May2018
+  418  clear 
+  419  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  420  md5sum INSTANCE1/STRATEGY/platformwithirms
+  421  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  422  md5sum SUB2_BINARY_LOGGER/memstore
+  423  md5sum STUB/stub
+  424  cd ..
+  425  ls -lrt
+  426  cd 4Apr2018_SUB2_BINARY_PHASE3
+  427  clear
+  428  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  429  md5sum INSTANCE1/STRATEGY/platformwithirms
+  430  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  431  md5sum SUB2_BINARY_LOGGER/memstore
+  432  md5sum STUB/stub
+  433  cd ..
+  434  ls -lrt
+  435  cd 7May2108_GR_SUB2_BINARY_PHASE3
+  436  ls -lrt
+  437  cd SUB2_BINARY_PHASE3_220_17May2018
+  438  cd ..
+  439  cd SUB2_BINARY_PHASE3_220_17May2018
+  440  clear
+  441  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  442  md5sum INSTANCE1/STRATEGY/platformwithirms
+  443  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  444  md5sum SUB2_BINARY_LOGGER/memstore
+  445  md5sum STUB/stub
+  446  ls -lrt
+  447  cd ..
+  448  ls -lrt
+  449  cd SUB2_BINARY_PHASE3_INST2_29May
+  450  ls -lrt
+  451  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  452  md5sum INSTANCE1/STRATEGY/platformwithirms
+  453  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  454  md5sum SUB2_BINARY_LOGGER/memstore
+  455  md5sum STUB/stub
+  456  scp INSTANCE1/NSEFO_ADAPTER/nsefo_gw root@10.250.34.216:/else/SUB2_BINARY_PHASE3/INSTANCE1/NSEFO_ADAPTER/
+  457  scp INSTANCE1/STRATEGY/platformwithirms root@10.250.34.216:/else/SUB2_BINARY_PHASE3/INSTANCE1/STRATEGY/
+  458  scp INSTANCE1/OFFLINERMS/subtwo_rms root@10.250.34.216:/else/SUB2_BINARY_PHASE3/INSTANCE1/OFFLINERMS/
+  459  scp SUB2_BINARY_LOGGER/memstore root@10.250.34.216:/else/SUB2_BINARY_PHASE3/SUB2_BINARY_LOGGER/ 
+  460  scp SUB2_BINARY_LOGGER/memstore root@10.250.34.216:/else/SUB2_BINARY_PHASE3/SUB2_BINARY_LOGGER/BinReader/
+  461  scp STUB/stub root@10.250.34.216:/else/SUB2_BINARY_PHASE3/STUB/
+  462  cd Project/test/ME/FO/
+  463  ls -lrt
+  464  less Token.txt 
+  465  less Token.txt |wc -l
+  466  less Token.txt 
+  467  ssh root@10.250.34.220
+  468  ssh root@10.250.34.223
+  469  cd 210/Practice/dist/Release/GNU-Linux-x86/
+  470  ls -lrt
+  471  ./practice 
+  472  objdump -S --disassemble practice >practicePtr.dump
+  473  less practicePtr.dump 
+  474  objdump -S --disassemble practice >practiceVir.dump
+  475  ./practice 
+  476  less practiceVir.dump 
+  477  diff practiceVir.dump practicePtr.dump 
+  478  diff practiceVir.dump practicePtr.dump |wc -l
+  479  less practiceVir.dump |wc -l
+  480  less practicePtr.dump |wc -l
+  481  ./practice 
+  482  objdump -S --disassemble practice >practiceNoVir.dump
+  483  less practiceNoVir.dump |wc -l
+  484  less practiceNoVir.dump 
+  485  less practiceVir.dump 
+  486  less practiceNoVir.dump 
+  487  less practiceVir.dump 
+  488  less practiceNoVir.dump 
+  489  less practiceVir.dump 
+  490  ./practice 
+  491  cd 210/Practice/dist/Debug/GNU-Linux-x86/
+  492  ./practice 
+  493  objdump -S --disassemble practice >practice.dump
+  494  less practice.dump 
+  495  ./practice 
+  496  objdump -S --disassemble practice >practice.dump
+  497  less practice.dump 
+  498  pwd
+  499  less practice.dump 
+  500  objdump -S --disassemble practice >practice.dump
+  501  less practice.dump 
+  502  objdump -S --disassemble practice >practice1.dump
+  503  objdump -S --disassemble practice >practice.dump
+  504  diff practice.dump practice1.dump 
+  505  less practice1.dump 
+  506  less practice.dump 
+  507  less practice1.dump 
+  508  ./practice 
+  509  ssh root@10.250.34.215
+  510  ls -lrt
+  511  less gw_logger_struct.h_CRX 
+  512  cd sub2p3_EoD_Analytics/dist/Debug/GNU-Linux-x86/
+  513  ls -lrt
+  514  ./sub2p3_eod_analytics 4sub2_logger_20180607_1.log 
+  515  cd
+  516  cd 210/BackupFolder/Sub3_Latency_Backup/sub2p3_EoD_Analytics_Triangle_TradeFieldAddition_CRX/
+  517  cd dist/Debug/GNU-Linux-x86/
+  518  ls -lrt
+  519  cp ../../Release/GNU-Linux-x86/sub2p3_eod_analytics.ini .
+  520  pwd
+  521  ./sub2p3_eod_analytics_triangle_tradefieldaddition_crx sub2_logger_20180608_1.log 
+  522  scp sub2p3_eod_analytics_triangle_tradefieldaddition_crx root@10.250.34.215:/else/SUB2_BINARY_PHASE3_MD5SUM/SUB2_BINARY_LOGGER/BinReader/
+  523  scp sub2p3_eod_analytics_triangle_tradefieldaddition_crx root@10.250.34.220:/else/SUB2_BINARY_PHASE3_MD5SUM/SUB2_BINARY_LOGGER/BinReader/
+  524  scp sub2p3_eod_analytics_triangle_tradefieldaddition_crx root@10.250.34.220:/else/SUB2_BINARY_PHASE3/SUB2_BINARY_LOGGER/BinReader/
+  525  pwd
+  526  cd /else/user_home/naresh/210/BackupFolder/Sub3_Latency_Backup
+  527  rm -r sub2p3_EoD_Analytics_Box/
+  528  ls -lrt
+  529  cd sub2p3_EoD_Analytics_TRI_RTT_09Feb2108
+  530  cd dist/Release/GNU-Linux-x86/
+  531  ls -lrt
+  532  cd ../../../../
+  533  ls -lrt
+  534  cp -r  sub2p3_EoD_Analytics_TRI_RTT_09Feb2108 sub2p3_EoD_Analytics_Box_14Jun2018
+  535  cd sub2p3_EoD_Analytics_Box_14Jun2018/dist/Debug/GNU-Linux-x86/
+  536  ls -lrt
+  537  mv ../../Release/GNU-Linux-x86/sub2p3_eod_analytics.ini .
+  538  ls -lrt
+  539  mv sub2p3_eod_analytics.ini Box_sub2p3_eod_analytics.ini
+  540  ls -lrt
+  541  pwd
+  542  ls -lrt
+  543  ./sub2p3_eod_analytics_box_14jun2018 sub2_logger_20180613_1.log 
+  544  ./sub2p3_eod_analytics_box_14jun2018 sub2_logger_20180613_1.log >fi
+  545  grep "TRD_MODE" fi 
+  546  grep "TRT_MODE" fi 
+  547  grep "TRT_MODE" fi >TRT
+  548  grep "TRD_MODE" fi >TRD
+  549  less TRT |wc -l
+  550  less TRD |wc -l
+  551  diff TRT TRD
+  552  pwd
+  553  less TRD
+  554  less fi 
+  555  ./sub2p3_eod_analytics_box_14jun2018 sub2_logger_20180613_1.log >fi
+  556  less fi 
+  557  ./sub2p3_eod_analytics_box_14jun2018 sub2_logger_20180613_1.log >fi
+  558  less fi 
+  559  grep "TRD_RSP::IOrd" fi 
+  560  grep "ML RES::Iord" fi >Rt 
+  561  less Rt 
+  562  ./sub2p3_eod_analytics_box_14jun2018 sub2_logger_20180613_1.log >fi
+  563  less fi 
+  564  ./sub2p3_eod_analytics_box_14jun2018 sub2_logger_20180613_1.log >fi
+  565  less fi 
+  566  ls -lrt
+  567  les fi 
+  568  less fi 
+  569  ./sub2p3_eod_analytics_box_14jun2018 sub2_logger_20180613_1.log 
+  570  less fi 
+  571  ./sub2p3_eod_analytics_box_14jun2018 sub2_logger_20180613_1.log 
+  572  pwd
+  573  ls -lrt
+  574  rm TR*
+  575  rn Rt 
+  576  rm Rt 
+  577  rm fi 
+  578  ./sub2p3_eod_analytics_box_14jun2018 sub2_logger_20180613_1.log 
+  579  clear
+  580  ./sub2p3_eod_analytics_box_14jun2018 sub2_logger_20180613_1.log 
+  581  pwd
+  582  less Box_sub2p3_eod_analytics.ini 
+  583  pwd
+  584  ls -lrt
+  585  cd ..
+  586  cd Release/GNU-Linux-x86/
+  587  ls -lrt
+  588  cd ..
+  589  ls -lrt
+  590  cd GNU-Linux-x86/
+  591  ls -lrt
+  592  cp /else/dist/Release/GNU-Linux-x86/box_eod_analytics.ini .
+  593  ls -lrt
+  594  ls -lrt
+  595  scp -r SUB2_BINARY_PHASE3_220_17May2018 root@10.250.34.220:/else/
+  596  cd md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  597  md5sum INSTANCE1/STRATEGY/platformwithirms
+  598  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  599  md5sum SUB2_BINARY_LOGGER/memstore
+  600  cd SUB2_BINARY_PHASE3_220_17May2018/
+  601  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  602  md5sum INSTANCE1/STRATEGY/platformwithirms
+  603  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  604  md5sum SUB2_BINARY_LOGGER/memstore
+  605  md5sum STUB/stub
+  606  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  607  md5sum INSTANCE1/STRATEGY/platformwithirms
+  608  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  609  md5sum SUB2_BINARY_LOGGER/memstore
+  610  md5sum STUB/stub
+  611  cd
+  612  ls -lrt
+  613  less gw_logger_struct.h
+  614  cd Project/ExCommPlatform/dist/Debug/GNU-Linux-x86/
+  615  ./excommplatform 1 INSTANCE_1_TokenPortFolio.csv
+  616  ./excommplatform 10 INSTANCE_3_TokenPortFolio.csv
+  617  ls -lrt
+  618  less INSTANCE_3_TokenPortFolio.csv 
+  619  ./excommplatform 10 INSTANCE_3_TokenPortFolio.csv
+  620  less INSTANCE_3_TokenPortFolio.csv 
+  621  cp INSTANCE_3_TokenPortFolio.csv INSTANCE_3_TokenPortFolio_NO_SF.csv 
+  622  vim INSTANCE_3_TokenPortFolio_NO_SF.csv 
+  623  ./excommplatform 10 INSTANCE_3_TokenPortFolio_NO_SF.csv
+  624  cd Project/ExCommPlatform_ConrevStratFix/
+  625  cd dist/Debug/GNU-Linux-x86/
+  626  ls -lrt
+  627  vim config_ExCommPlatform.ini 
+  628  less /else/user_home/naresh/Project/ExCommPlatform/dist/Debug/GNU-Linux-x86/config_ExCommPlatform.ini 
+  629  vim config_ExCommPlatform.ini 
+  630  diff config_ExCommPlatform /else/user_home/naresh/Project/ExCommPlatform/dist/Debug/GNU-Linux-x86/config_ExCommPlatform.ini
+  631  diff config_ExCommPlatform.ini /else/user_home/naresh/Project/ExCommPlatform/dist/Debug/GNU-Linux-x86/config_ExCommPlatform.ini
+  632  less /else/user_home/naresh/Project/ExCommPlatform/dist/Debug/GNU-Linux-x86/INSTANCE_1_TokenPortFolio.csv
+  633  less /else/user_home/naresh/Project/ExCommPlatform/dist/Debug/GNU-Linux-x86/INSTANCE_1_TokenPortFolio.csv |wc -l
+  634  less /else/user_home/naresh/Project/ExCommPlatform/dist/Debug/GNU-Linux-x86/INSTANCE_1_TokenPortFolio.csv .
+  635  cp  /else/user_home/naresh/Project/ExCommPlatform/dist/Debug/GNU-Linux-x86/INSTANCE_1_TokenPortFolio.csv .
+  636  ./excommplatform 1 INSTANCE_1_TokenPortFolio.csv 
+  637  scp -r  /else/user_home/naresh/Project/ExCommPlatform/ root@10.250.34.219:/else/
+  638  vim /else/user_home/naresh/.ssh/known_hosts
+  639  scp -r  /else/user_home/naresh/Project/ExCommPlatform/ root@10.250.34.219:/else/
+  640  pwd
+  641  cd ..
+  642  cd ExCommPlatform
+  643  ls -lrt
+  644  cd  dist/Debug/GNU-Linux-x86/
+  645  ls -lrt
+  646  less INSTANCE_1_TokenPortFolio.csv |wc -l
+  647  ./excommplatform 1 INSTANCE_3_TokenPortFolio.csv 
+  648  ./excommplatform 10 INSTANCE_3_TokenPortFolio.csv 
+  649  ssh root@10.250.34.216
+  650  l s-lrt
+  651  ls -lrt
+  652  cd SUB2_BINARY_PHASE3
+  653  cd ..
+  654  ls -lrt
+  655  ssh root@10.250.34.215
+  656  top
+  657  ssh root@10.250.34.217
+  658  scp /else/Daily_files/contract.txt root@10.250.34.217:/else/FES
+  659  scp /else/Daily_files/contract.txt root@10.250.34.217:/else/FES_PROD/SUB2_P3_FESERVICE/NSE_DAILY_FILES/
+  660  less /else/Daily_files/contract.txt 
+  661  cd FES
+  662  ./start_FES.sh 
+  663  ./stop_FES.sh 
+  664  ./start_FES.sh 
+  665  ./stop_FES.sh 
+  666  ssh root@10.250.34.217
+  667  cd Project/ExCommPlatform/dist/Debug/GNU-Linux-x86/
+  668  ./excommplatform 10 INSTANCE_3_TokenPortFolio.csv 
+  669  scp contract.txt root@10.250.34.217:/else/FES_PROD/SUB2_P3_FESERVICE/NSE_DAILY_FILES/
+  670  cd FFH-FES2/
+  671  ls -lrt
+  672  cd SUB2_P3_FESERVICE/
+  673  ls -lrt
+  674  less dealer_segment.conf 
+  675  rm -r  NSE_DAILY_FILES/
+  676  pwd
+  677  ls -lrt
+  678  vim INSTANCE_1_TokenList.txt 
+  679  ssh root@10.250.34.217
+  680  ssh root@10.250.34.215
+  681  cd  FFH-FES2/
+  682  cd SUB2_P3_FESERVICE/
+  683  less INSTANCE_1_TokenList
+  684  less INSTANCE_1_TokenList.txt 
+  685  cd ..
+  686  ./start_FES.sh 
+  687  less SUB2_P3_FESERVICE/out.txt 
+  688  cd SUB2_P3_FESERVICE/NSE_DAILY_FILES/
+  689  ls -lrt
+  690  less ../out.txt 
+  691  mv ind_close_all.csv  ind_close_all_22012018.csv
+  692  cd ..
+  693  ./stop_FES.sh 
+  694  ./start_FES.sh 
+  695  less CONFIG/feservice.ini 
+  696  top
+  697  ./stop_FES.sh 
+  698  less CONFIG/feservice.ini 
+  699  ./start_FES.sh 
+  700  cd SUB2_P3_FESERVICE/
+  701  ./logparser.sh service_20180618_07698_00001 
+  702  less service_20180618_07698_00001.log 
+  703  less dealer_segment.conf 
+  704  less error_code_to_string.conf 
+  705  cd ..
+  706  ./stop_FES.sh 
+  707  cd SUB2_P3_FESERVICE/
+  708  vim dealer_segment.conf 
+  709  vim dealer_instance
+  710  vim dealer_instance.conf 
+  711  vim dealer_segment.conf 
+  712  vim dealer_instance.conf 
+  713  cd ..
+  714  ./start_FES.sh 
+  715  less SUB2_P3_FESERVICE/dealer_segment.conf 
+  716  ./start_FES.sh 
+  717  less SUB2_P3_FESERVICE/INSTANCE_1_TokenList.txt 
+  718  ./stop_FES.sh 
+  719  ./start_FES.sh 
+  720  ls -lrt
+  721  cd SUB2_BINARY_PHASE3_InProd15June 
+  722  scp INSTANCE1/NSEFO_ADAPTER/nsefo_gw root@10.250.34.217:/else/SUB2_BINARY_BOX_STRAT/INSTANCE1/NSEFO_ADAPTER/
+  723  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  724  md5sum INSTANCE1/STRATEGY/platformwithirms
+  725  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  726  md5sum SUB2_BINARY_LOGGER/memstore
+  727  md5sum STUB/stub
+  728  scp INSTANCE1/NSEFO_ADAPTER/nsefo_gw root@10.250.34.217:/else/SUB2_BINARY_BOX_STRAT/INSTANCE1/NSEFO_ADAPTER/
+  729  cd 
+  730  ssh root@10.250.34.217
+  731  ssh root@10.250.34.217
+  732  ssh root@10.250.34.219
+  733  ls -lrt
+  734  cd SUB2_BINARY_PHASE3_InProd15June/
+  735  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  736  md5sum INSTANCE1/STRATEGY/platformwithirms
+  737  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  738  md5sum SUB2_BINARY_LOGGER/memstore
+  739  md5sum STUB/stub
+  740  scp STUB/stub root@10.250.34.219:/else/SUB2_BINARY_BOX_STRAT/STUB/
+  741  less CONFIG/sub2p3_config.ini
+  742  vim CONFIG/sub2p3_config.ini
+  743  ls -lrt
+  744  cd SCRIPTS
+  745  ls -lrt
+  746  cd ..
+  747  scp -r SCRIPTS SCRIPTS1/ root@10.250.34.219:/else/SUB2_BINARY_BOX_STRAT/
+  748  cd
+  749  cd Project/ExCommPlatform
+  750  cd dist/Debug/GNU-Linux-x86/
+  751  ls -lrt
+  752  ls -lrt
+  753  cd SUB2_BINARY_PHASE3_InProd15June
+  754  scp -r SCRIPTS/ SCRIPTS1/ root@10.250.34.217:/else/SUB2_BINARY_PHASE3/
+  755  cd 210/Practice/dist/Debug/GNU-Linux-x86/
+  756  ls -lrt
+  757  ./practice 
+  758  cd ..
+  759  cd Release/GNU-Linux-x86/
+  760  ls -lrt
+  761  ./practice 
+  762  ssh root@10.250.34.216
+  763  ls -lrt
+  764  cd LtpFFpublisher-Run/
+  765  ls -lrt
+  766  less config.ini 
+  767  ./ltpffpublisher 
+  768  ./ltpffpublisher config.ini 
+  769  less start_LtpFFPublisher.sh 
+  770  less config.ini 
+  771  ./stop_LtpFFPublisher.sh 
+  772  ls -lrt
+  773  ls -lrt
+  774   cd SUB2_BINARY_PHASE3_InProd15June/
+  775  scp CONFIG/sub2p3_config.ini root@10.250.34.219:/else/SUB2_BINARY_PHASE3_MD5SUM/CONFIG/
+  776  ll
+  777  cd FFH-FES
+  778  cd FFH-FES2/
+  779  ll
+  780  top
+  781  cd FES
+  782  ll
+  783  cat CONFIG/feservice.ini |grep PORT
+  784  vi SUB2_P3_FESERVICE/error_code_to_string.conf 
+  785  ./stop_FES.sh 
+  786  ./start_FES.sh 
+  787  top
+  788  vi SUB2_P3_FESERVICE/error_code_to_string.conf 
+  789  exit
+  790  cp /else/Daily_files/ind_close_all_15062018.csv .
+  791  ls -lrt
+  792  cd FES
+  793  ./start_FES.sh 
+  794  top
+  795  ./stop_FES.sh 
+  796  ./start_FES.sh 
+  797  less CONFIG/feservice.ini 
+  798  ./stop_FES.sh 
+  799  less SUB2_P3_FESERVICE/INSTANCE_1_TokenList.txt
+  800  cd SUB2_P3_FESERVICE/
+  801  cd NSE_DAILY_FILES
+  802  ls -lrt
+  803  cd ..
+  804  scp -r NSE_DAILY_FILES root@10.250.34.217:/else/FES_PROD/SUB2_P3_FESERVICE/
+  805  cd ..
+  806  ./start_FES.sh 
+  807  less SUB2_P3_FESERVICE/out.txt 
+  808  scp SUB2_P3_FESERVICE/INSTANCE_1_TokenList.txt root@10.250.34.217:/else/FES_PROD/SUB2_P3_FESERVICE/instance_token.conf
+  809  less SUB2_P3_FESERVICE/error_code_to_string.conf 
+  810  ./stop_FES.sh 
+  811  ./start_FES.sh 
+  812  less SUB2_P3_FESERVICE/dealer_segment.conf 
+  813  ssh root@10.250.34.217
+  814  ssh root@10.250.34.219
+  815  cd Project/ExCommPlatform/dist/Debug/GNU-Linux-x86/
+  816  ls -lrt
+  817  clear
+  818  less INSTANCE_3_TokenPortFolio.csv 
+  819  less INSTANCE_3_TokenPortFolio.csv  |wc -l
+  820  less INSTANCE_1_TokenPortFolio.csv  |wc -l
+  821  ./excommplatform 1 INSTANCE_1_TokenPortFolio.csv
+  822  ./excommplatform 2 INSTANCE_1_TokenPortFolio.csv
+  823  ./excommplatform 10 INSTANCE_1_TokenPortFolio.csv
+  824  ssh root@10.250.34.215
+  825  ssh root@10.250.34.216
+  826  ssh root@10.250.34.215
+  827  ssh root@10.250.34.217
+  828  ls -lrt
+  829  cd SUB2_BINARY_PHASE3_InProd15June
+  830  clear
+  831  SUB2_BINARY_PHASE3_InProd15June
+  832  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  833  md5sum INSTANCE1/STRATEGY/platformwithirms
+  834  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  835  md5sum SUB2_BINARY_LOGGER/memstore
+  836  md5sum STUB/stub
+  837  scp STUB/stub root@10.250.34.217:/else/SUB2_BINARY_PHASE3/
+  838  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  839  md5sum INSTANCE1/STRATEGY/platformwithirms
+  840  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  841  md5sum SUB2_BINARY_LOGGER/memstore
+  842  md5sum STUB/stub
+  843  scp STUB/stub root@10.250.34.217:/else/SUB2_BINARY_PHASE3/
+  844  md5sum STUB/stub 
+  845  pwd
+  846  cd
+  847  ssh root@10.250.34.216
+  848  ls -lrt
+  849  less INSTANCE_10_TokenList.txt
+  850  ssh root@10.250.34.217
+  851  ls -lrt
+  852  cd SUB2_BINARY_PHASE3_InProd15June
+  853  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  854  md5sum INSTANCE1/STRATEGY/platformwithirms
+  855  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  856  md5sum SUB2_BINARY_LOGGER/memstore
+  857  md5sum STUB/stub
+  858  ls -lrt
+  859  cd PortfolioUtilityConrev
+  860  cd ..
+  861  cd PortfolioUtility_LimitFile/
+  862  ls -lrt
+  863  cd PortfolioUtilityConrev
+  864  cd ..
+  865  cd PortfolioUtilityConrev
+  866  ls -lrt
+  867  cd ..
+  868  cd BenchMarking_PortfolioUtility
+  869  la 
+  870  ls -lrt
+  871  cd ..
+  872  ls -lrt
+  873  cd  TESTING_PF_UTIL
+  874  ls -lrt
+  875  rm INSTANCE_*
+  876  ls -lrt
+  877  cp /else/Daily_files/contract.txt .
+  878  vim FilterToken.txt 
+  879  ./portfolioutility contract.txt
+  880  ls -lrt
+  881  vim config.ini 
+  882  ./portfolioutility contract.txt
+  883  less INSTANCE_1_TokenList.txt 
+  884  ls -lrt
+  885  rm INSTANCE_*
+  886  ls -lrt
+  887  vim config.ini 
+  888  vim FilterToken.txt 
+  889  ./portfolioutility  contract.txt
+  890  vim FilterToken.txt 
+  891  ./portfolioutility  contract.txt
+  892  vim config.ini 
+  893  echo >FilterToken.txt 
+  894  vim FilterToken.txt 
+  895  ./portfolioutility  contract.txt
+  896  vim config.ini 
+  897  echo >FilterToken.txt 
+  898  vim FilterToken.txt 
+  899  ./portfolioutility contract.txt
+  900  echo >FilterToken.txt 
+  901  vim config.ini 
+  902  vim FilterToken.txt 
+  903  vim config.ini 
+  904  ./portfolioutility contract.txt
+  905  vim config.ini 
+  906  echo >FilterToken.txt 
+  907  vim FilterToken.txt 
+  908  ./portfolioutility  contract.txt
+  909  vim config.ini 
+  910  rm INSTANCE_4_*
+  911  vim config.ini 
+  912  ./portfolioutility contract.txt
+  913  vim config.ini 
+  914  echo >FilterToken.txt 
+  915  vim FilterToken.txt 
+  916  ./portfolioutility  contract.txt
+  917  ls -lrt
+  918  vim config.ini 
+  919  ./portfolioutility  contract.txt
+  920  vim config.ini 
+  921  ./portfolioutility contract.txt
+  922  vim config.ini 
+  923  ./portfolioutility contract.txt
+  924  vim config.ini 
+  925  ./portfolioutility contract.txt
+  926  vim config.ini 
+  927  ./portfolioutility contract.txt
+  928  vim FilterToken.txt 
+  929  ./portfolioutility contract.txt
+  930  ls -lrt
+  931  cat INSTANCE_1_TokenList.txt INSTANCE_2_TokenList.txt >>../FFH-FES2/SUB2_P3_FESERVICE/INSTANCE_1_TokenList.txt 
+  932  cat INSTANCE_3_TokenList.txt INSTANCE_7_TokenList.txt INSTANCE_8_TokenList.txt >>../FFH-FES2/SUB2_P3_FESERVICE/INSTANCE_1_TokenList.txt
+  933  scp /else/Daily_files/contract.txt  root@10.250.34.217:/else/ME_FO_GR/
+  934  ls -lrt
+  935  cd NSEMatching_GR/
+  936  ls -lrt
+  937  cd
+  938  ls -lrt
+  939  cd SUB2_BINARY_PHASE3_InProd15June
+  940  clear
+  941  md5sum INSTANCE1/NSEFO_ADAPTER/nsefo_gw
+  942  md5sum INSTANCE1/STRATEGY/platformwithirms
+  943  md5sum INSTANCE1/OFFLINERMS/subtwo_rms
+  944  md5sum SUB2_BINARY_LOGGER/memstore
+  945  md5sum STUB/stub
+  946  cp INSTANCE1/NSEFO_ADAPTER/nsefo_gw root@10.250.34.216:/else/SUB2_BINARY_PHASE3/INSTANCE1/NSEFO_ADAPTER/
+  947  scp INSTANCE1/NSEFO_ADAPTER/nsefo_gw root@10.250.34.216:/else/SUB2_BINARY_PHASE3/INSTANCE1/NSEFO_ADAPTER/
+  948  scp INSTANCE1/NSEFO_ADAPTER/nsefo_gw root@10.250.34.219:/else/SUB2_BINARY_PHASE3/INSTANCE1/NSEFO_ADAPTER/
+  949  cd Project/test/ME.
+  950  cd Project/test/ME/
+  951  ls -lrt
+  952  cd FO/
+  953  ls -lrt
+  954  pwd
+  955  less config.ini 
+  956  vim config.ini 
+  957  pwd
+  958  less config.ini 
+  959  cd  /else/user_home/naresh/NSEMatching_GR/dist/DebugFO/GNU-Linux-x86/
+  960  ls -lrt
+  961  less config.ini 
+  962  cd
+  963  cd 210/BackupFolder/
+  964  ls -lrt
+  965  cd NSEMatchingBackup/
+  966  ls -lrt
+  967  cd Project/ExCommPlatform_ConrevStratFix/
+  968  ls -lrt
+  969  cd dist/Debug/GNU-Linux-x86/
+  970  ls -lrt
+  971  vim config_ExCommPlatform.ini 
+  972  ./excommplatform 10 INSTANCE_1_TokenPortFolio.csv 
+  973  vim config_ExCommPlatform.ini 
+  974  ls -lrt
+  975  ./excommplatform 10 INSTANCE_1_TokenPortFolio.csv 
+  976  ./excommplatform 1000 INSTANCE_1_TokenPortFolio.csv 
+  977  cd 210/BackupFolder/Sub3_Latency_Backup/
+  978  ls -lrt
+  979  cd ..
+  980  cd NSEMatchingBackup/
+  981  ls -lrt
+  982  cp NSEMatching_box_GR_WithoutPan NSEMatching_box_GR_WithoutPan _MLAlltrade
+  983  cp -r  NSEMatching_box_GR_WithoutPan NSEMatching_box_GR_WithoutPan _MLAlltrade
+  984  cp -r  NSEMatching_box_GR_WithoutPan NSEMatching_box_GR_WithoutPan_MLAlltrade
+  985  ls -lrt
+  986  cd NSEMatching_box_GR_WithoutPan_MLAlltrade
+  987  ls -lrt
+  988  cp dist/DebugFO/GNU-Linux-x86/MatchingEngineFO root@10.250.34.217:/else/FO_COLO/ME_FO_GR/
+  989  scp dist/DebugFO/GNU-Linux-x86/MatchingEngineFO root@10.250.34.217:/else/FO_COLO/ME_FO_GR/
+  990  cd
+  991  cd /else/Daily_files/
+  992  ls -lrt
+  993  cd /else/Daily_files/
+  994  cd FFH-FES2/
+  995  cat SUB2_P3_FESERVICE/fe_version.conf 
+  996  cat SUB2_P3_FESERVICE/dealer_segment.conf 
+  997  cat SUB2_P3_FESERVICE/dealer_instance.conf 
+  998  cat SUB2_P3_FESERVICE/fe_version.conf 
+  999  rciy
+ 1000  exit
+ 1001  cd /else/user_home/naresh/Project/ExCommPlatform/dist/Debug/GNU-Linux-x86/
+ 1002  ls -lrtha
+ 1003  pwd
+ 1004  ls -lrtha
+ 1005  vim Portfolio-27Mar2018.csv 
+ 1006  ./excommplatform 10 INSTANCE_1_TokenPortFolio.csv
+ 1007  pwd
+ 1008  cd ../../../
+ 1009  cd ../../
+ 1010  pwd
+ 1011  cd FES
+ 1012  vim CONFIG/feservice.ini 
+ 1013  cd SUB2_P3_FESERVICE/
+ 1014  cat INSTANCE_1_TokenList.txt
+ 1015  grep "10447" /else/Daily_files/contract.txt 
+ 1016  ll
+ 1017  top
+ 1018  pwdx 25803
+ 1019  cd ..
+ 1020  vim CONFIG/feservice.ini 
+ 1021  cd ..
+ 1022  ll
+ 1023  cd Project/ExCommPlatform/dist/Debug/GNU-Linux-x86/
+ 1024  history >out.txt 
